@@ -5,6 +5,7 @@
 // Referenze
 var indietro = $('.prev');
 var avanti = $('.next');
+var btn = $('.nav i');
 
 // Navigazione con il mouse
 avanti.click(function() {
@@ -16,13 +17,35 @@ indietro.click(function() {
 
 // Navigazione con la tastiera
 $(document).keydown(function(e) {
-    console.log(e);
-    console.log(e.keyCode);
-
     if (e.keyCode === 39) {
         slider('up');
     } else if (e.keyCode === 37) {
         slider('down');
+    }
+})
+
+// Bonus
+btn.click(function() {
+    if ($(this).hasClass('one')) {
+        $('.images').find('.active').removeClass('active');
+        $('.images img.one').addClass('active');
+        $('.nav').find('.active').removeClass('active');
+        $('.nav i.one').addClass('active');
+    } else if ($(this).hasClass('two')) {
+        $('.images').find('.active').removeClass('active');
+        $('.images img.two').addClass('active');
+        $('.nav').find('.active').removeClass('active');
+        $('.nav i.two').addClass('active');
+    } else if ($(this).hasClass('three')) {
+        $('.images').find('.active').removeClass('active');
+        $('.images img.three').addClass('active');
+        $('.nav').find('.active').removeClass('active');
+        $('.nav i.three').addClass('active');
+    } else if ($(this).hasClass('four')) {
+        $('.images').find('.active').removeClass('active');
+        $('.images img.four').addClass('active');
+        $('.nav').find('.active').removeClass('active');
+        $('.nav i.four').addClass('active');
     }
 })
 
